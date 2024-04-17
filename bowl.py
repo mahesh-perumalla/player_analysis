@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import requests
 from bs4 import BeautifulSoup
@@ -109,10 +110,16 @@ salary = salary.rename(columns={"Player": "Player Name",
 # merging datasets to include salary
 bowling_df = pd.merge(bowling_data, salary, on=['Player Name', 'Year'])
 
-# VFM =
+# VFM = ((wickets*weight) * (weight/Bowling Average) * (weight/Economy))/(Salary/100)
 weight = 100/3
 bowling_df["Value for Money"] = ((bowling_df["Wickets"]*weight) * (weight/bowling_df["Bowling Average"])
                                  * (weight/bowling_df["Economy"])) / (bowling_df["Salary ($)"]/100)
+
+#  remove all inf values
+bowling_df.replace([np.inf, -np.inf], 0, inplace=True)
+
+# exporting bowling data for team analysis
+bowling_df.to_csv("./output/bowling_output.csv", index=False, header=True)
 
 # grouping and averaging data for players who have played for multiple seasons
 temp_df = bowling_df[bowling_df.duplicated(
