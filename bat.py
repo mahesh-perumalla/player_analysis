@@ -188,7 +188,7 @@ print("Batsman-Class Legend:")
 for label, description in class_legend.items():
     print(f"- {label}: {description}")
     
-print("\t\t↓ Player-Class Table ↓")
+print("\t\t↓ Batsman-Class Table ↓")
 # showing the top 15 rows
 print(new_batting_df)
 
