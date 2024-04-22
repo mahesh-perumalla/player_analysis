@@ -183,7 +183,7 @@ class_legend = {
     'Outstanding': str(bowling_mean+bowling_std*3)+" - "+str(bowling_vfm_max)
 }
 # Print the legend
-print("Player-Class Legend:")
+print("Bowler-Class Legend:")
 for label, description in class_legend.items():
     print(f"- {label}: {description}")
 
