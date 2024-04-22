@@ -68,7 +68,7 @@ def fixing(no_of_teams, teams_input):
                 team_data["Year"], team_data["Aggregate Value for Money"], label=team, color=TeamColor[team].value)
     plt.xlabel("Year")
     plt.ylabel("Aggregate Value for Money")
-    plt.title("Aggregate Value for Money Overtime for " + TeamName[team].value)
+    plt.title("Aggregate Value for Money Overtime")
     plt.legend(loc="upper right")
     plt.show()
 
