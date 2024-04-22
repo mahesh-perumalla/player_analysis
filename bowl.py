@@ -145,9 +145,9 @@ new_bowling_df["Overall Value for Money"] = new_bowling_df["Overall Value for Mo
     3)
 
 # calculating statistical values
-bowling_std = new_bowling_df["Overall Value for Money"].std()
-bowling_mean = new_bowling_df["Overall Value for Money"].mean()
-bowling_vfm_max = new_bowling_df["Overall Value for Money"].max()
+bowling_std = new_bowling_df["Overall Value for Money"].std().round(3)
+bowling_mean = new_bowling_df["Overall Value for Money"].mean().round(3)
+bowling_vfm_max = new_bowling_df["Overall Value for Money"].max().round(3)
 
 # analysis of batting data
 conditions = [new_bowling_df['Overall Value for Money'].between(0, bowling_mean),
@@ -188,6 +188,7 @@ for label, description in class_legend.items():
     print(f"- {label}: {description}")
 
 print("\t\t↓ Bowler-Class Table ↓")
+# showing the top 15 rows
 print(new_bowling_df)
 
 top_bowler_list = new_bowling_df.loc[(new_bowling_df['Class'] == 'Very Good') | (
