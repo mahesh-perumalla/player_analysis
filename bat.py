@@ -146,9 +146,9 @@ new_batting_df["Overall Value for Money"] = new_batting_df["Overall Value for Mo
     3)
 
 # calculating statistical values
-batting_std = new_batting_df["Overall Value for Money"].std()
-batting_mean = new_batting_df["Overall Value for Money"].mean()
-batting_vfm_max = new_batting_df["Overall Value for Money"].max()
+batting_std = new_batting_df["Overall Value for Money"].std().round(3)
+batting_mean = new_batting_df["Overall Value for Money"].mean().round(3)
+batting_vfm_max = new_batting_df["Overall Value for Money"].max().round(3)
 
 # analysis of batting data
 conditions = [new_batting_df['Overall Value for Money'].between(0, batting_mean),
@@ -186,9 +186,10 @@ class_legend = {
 # Print the legend
 print("Batsman-Class Legend:")
 for label, description in class_legend.items():
-
     print(f"- {label}: {description}")
+    
 print("\t\t↓ Player-Class Table ↓")
+# showing the top 15 rows
 print(new_batting_df)
 
 top_batters_list = new_batting_df.loc[(new_batting_df['Class'] == 'Very Good') | (
