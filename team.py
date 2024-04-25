@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 
 # Read CSV files
-batting_df = pd.read_csv("./output/batting_output.csv")
-bowling_df = pd.read_csv("./output/bowling_output.csv")
+batting_df = pd.read_csv("./output/bat output/batting_output.csv")
+bowling_df = pd.read_csv("./output/bowl output/bowling_output.csv")
 
 batting_df = batting_df.groupby(["Team", "Year"])[
     "Value for Money"].mean().reset_index()
