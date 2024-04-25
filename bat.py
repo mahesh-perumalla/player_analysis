@@ -120,7 +120,7 @@ batting_df["Value for Money"] = (batting_df["Runs"] * batting_df["Batting Averag
                                  * batting_df["Strike Rate"]) / (batting_df["Salary ($)"])
 
 # exporting bowling data for team analysis
-batting_df.to_csv("./output/batting_output.csv", index=False, header=True)
+batting_df.to_csv("./output/bat output/batting_output.csv", index=False, header=True)
 
 # grouping and averaging data for players who have played for multiple seasons
 temp_df = batting_df[batting_df.duplicated(
