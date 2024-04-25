@@ -119,7 +119,7 @@ bowling_df["Value for Money"] = ((bowling_df["Wickets"]*weight) * (weight/bowlin
 bowling_df.replace([np.inf, -np.inf], 0, inplace=True)
 
 # exporting bowling data for team analysis
-bowling_df.to_csv("./output/bowling_output.csv", index=False, header=True)
+bowling_df.to_csv("./output/bowl output/bowling_output.csv", index=False, header=True)
 
 # grouping and averaging data for players who have played for multiple seasons
 temp_df = bowling_df[bowling_df.duplicated(
